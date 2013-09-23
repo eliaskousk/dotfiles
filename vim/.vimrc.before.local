@@ -1,0 +1,12 @@
+let g:spf13_no_restore_cursor = 1
+
+let g:spf13_no_views = 1
+
+let g:spf13_clear_search_highlight = 1
+
+"if has('gui_running')
+let g:airline_powerline_fonts = 1
+"endif
+
+"set regexpengine=1
+

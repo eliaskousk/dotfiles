@@ -1,0 +1,14 @@
+[user]
+	name = Elias Kouskoumvekakis
+	email = eliaskousk@gmail.com
+[branch]
+	autosetuprebase = always
+
+
+[alias]
+        ci = commit
+        st = status
+        co = checkout
+        oneline = log --pretty=oneline
+        br = branch
+        la = log --pretty=\"format:%ad %h (%an): %s\" --date=short
