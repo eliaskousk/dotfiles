@@ -7,5 +7,6 @@ let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'tw
 Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'jpalardy/vim-slime'
+Bundle 'joonty/vdebug.git'
 Bundle 'mattn/emmet-vim'
 

@@ -29,6 +29,8 @@ inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 
+inoremap jj <ESC>
+
 "let g:airline#extensions#bufferline#enabled = 1
 "let g:airline#extensions#branch#enabled = 1
 "let g:airline#extensions#branch#empty_message = 'LOL'
