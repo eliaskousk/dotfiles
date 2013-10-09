@@ -6,19 +6,21 @@ let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
 let g:indent_guides_enable_on_vim_startup = 0
 
-let g:nerdtree_tabs_open_on_gui_startup = 1
-
-" let g:nerdtree_tabs_open_on_console_startup = 1
+"let g:nerdtree_tabs_open_on_gui_startup = 1
+"let g:nerdtree_tabs_open_on_console_startup = 1
 
 let NERDTreeQuitOnOpen = 0
 
 let g:slime_target = "tmux"
 
+" Vertical split the help buffer
 cnoremap help vert help
 
+" Change buffers with CTRL+Arrow keys
 noremap <C-Left>  :bprev<CR>
 noremap <C-Right> :bnext<CR>
 
+" Unmap the arrow keys in normal and insert modes
 noremap <Left>   <NOP>
 noremap <Right>  <NOP>
 noremap <Up>     <NOP>
@@ -30,6 +32,11 @@ inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 
 inoremap jj <ESC>
+
+" Clipboard Cut and Paste
+noremap  <C-c> "+y
+"nnoremap <C-v> <F12>"+gP<F12>
+inoremap <C-v> <F12><C-r>+<F12>
 
 "let g:airline#extensions#bufferline#enabled = 1
 "let g:airline#extensions#branch#enabled = 1
