@@ -42,7 +42,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found debian git ssh-agent tmux vi-mode vundle web-search)
+plugins=(command-not-found debian git tmux vi-mode vundle web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,3 +60,8 @@ bindkey -M vicmd '?' history-incremental-pattern-search-forward
 # set up for insert mode too
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
+
+hd()
+{
+    hexdump -v -e '1/4 "%08X" "\n"' "$@"
+}
