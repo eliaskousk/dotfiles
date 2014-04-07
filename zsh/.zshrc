@@ -47,7 +47,7 @@ plugins=(command-not-found debian git ssh-agent tmux vi-mode vundle web-search)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/x86_64-linux-gnu/qt4/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=$PATH:/opt/Qt/Qt5.2.1/5.2.1/gcc_64/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Documents/HDD/Development/Projects/pcie_biosim/ssa_cores/sw/tools/SSA_Data/bin/
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
