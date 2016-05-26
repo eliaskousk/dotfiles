@@ -1,6 +1,7 @@
 [user]
 	name = Elias Kouskoumvekakis
 	email = eliaskousk@gmail.com
+	signingkey = F0335053
 [branch]
 	autosetuprebase = always
 
@@ -13,4 +14,4 @@
         br = branch
         la = log --pretty=\"format:%ad %h (%an): %s\" --date=short
 [github]
-	user = lupoGTI
+	user = eliaskousk
