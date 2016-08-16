@@ -104,6 +104,8 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 hd()
 {
         hexdump -v -e '1/4 "%08X" "\n"' "$@"
+        # OR
+        # od -A n -t x -w4 -v "$@" | tr -d ' '
 }
 
 #export LM_LICENSE_FILE=/opt/Modelsim/license.dat
