@@ -55,7 +55,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found debian git tmux vi-mode vundle web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(command-not-found debian git tmux vi-mode vundle docker docker-compose web-search zsh-autosuggestions zsh-syntax-highlighting)
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
