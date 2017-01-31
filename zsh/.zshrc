@@ -55,7 +55,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found debian git tmux vi-mode vundle docker docker-compose web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(command-not-found debian git tmux vi-mode vundle docker docker-compose cargo rust golang web-search zsh-autosuggestions zsh-syntax-highlighting)
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -90,7 +90,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export GOPATH=$HOME/Development/Software/GoWorkSpace
+export GOROOT=/opt/go
+export CARGO=$HOME/.cargo
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$GOROOT/bin:$CARGO/bin
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
