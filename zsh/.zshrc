@@ -90,10 +90,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Customize to your needs...
-export GOPATH=$HOME/Development/Software/GoWorkSpace
-export GOROOT=/opt/go
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+export ALGS4=/opt/algs4
 export CARGO=$HOME/.cargo
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$GOROOT/bin:$CARGO/bin
+export CUDA=/usr/local/cuda
+export GOROOT=/opt/go
+export GOPATH=$HOME/Development/Software/GoWorkSpace
+export PATH=$ALGS4/bin$CARGO/bin:$CUDA/bin:$GOROOT/bin:$PATH
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
