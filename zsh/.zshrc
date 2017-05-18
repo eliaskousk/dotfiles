@@ -97,7 +97,7 @@ export CARGO=$HOME/.cargo
 export CUDA=/usr/local/cuda
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
-export PATH=$ALGS4/bin$CARGO/bin:$CUDA/bin:$GOROOT/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CUDA/bin:$GOROOT/bin:$PATH
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
