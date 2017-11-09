@@ -4,4 +4,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'jpalardy/vim-slime'
 Bundle 'joonty/vdebug.git'
 "Bundle 'mattn/emmet-vim' Added in default of spf13
-
+Bundle 'chazy/cscope_maps'
+"Bundle 'brookhong/cscope.vim'
+"Bundle 'vim-scripts/cscope_dynamic'
+"Bundle 'vhda/verilog_systemverilog.vim'
+Bundle 'suoto/vim-hdl'
