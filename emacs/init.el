@@ -39,6 +39,7 @@
 ;  (menu-bar-mode -1)
 ;  (scroll-bar-mode -1)
 ;)
+(tool-bar-mode -1)
 
 ;;
 ;; Enable line numbers
@@ -63,9 +64,9 @@
 (prepend-path "~/.emacs.d/elisp")
 ;;
 
-;;;
-;;; MELPA
-;;;
+;;
+;; MELPA
+;;
 (require 'package) ;; You might already have this line
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
@@ -75,6 +76,12 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
+
+;;
+;; Backup Files
+;;
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
 
 ;;
 ;; Enable Verilog-Mode
@@ -87,32 +94,32 @@
 ;(add-hook 'verilog-mode-hook '(lambda () (font-lock-mode 1)))
 ;;
 
-;;;
-;;; VHDL Mode
-;;;
+;;
+;; VHDL Mode
+;;
 
 ;(autoload 'vhdl-mode "vhdl-mode" "VHDL Mode" t)
 ;(setq auto-mode-alist (cons '("\\.vhdl?$" . vhdl-mode) auto-mode-alist))
 
-;;;
-;;; Xilinx UCF Mode
-;;; https://github.com/ewa/emacs-ucf-mode
-;;;
+;;
+;; Xilinx UCF Mode
+;; https://github.com/ewa/emacs-ucf-mode
+;;
 (autoload 'ucf-mode "ucf-mode" "Xilinx UCF mode" t)
 (add-to-list 'auto-mode-alist '("\\.ucf\\'" . ucf-mode))
 
-;;;
-;;; Vivado Mode (XDC)
-;;; https://sites.google.com/site/jimw567/
-;;;
+;;
+;; Vivado Mode (XDC)
+;; https://sites.google.com/site/jimw567/
+;;
 (setq auto-mode-alist (cons  '("\\.xdc\\'" . vivado-mode) auto-mode-alist))
 (add-hook 'vivado-mode-hook '(lambda () (font-lock-mode 1)))
 (autoload 'vivado-mode "vivado-mode")
 
-;;;
-;;; Load color-theme-solarized package's dark theme
-;;; Not used - replaced with solarized-theme package
-;;;
+;;
+;; Load color-theme-solarized package's dark theme
+;; Not used - replaced with solarized-theme package
+;;
 ;;(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -126,27 +133,27 @@
  ;; If there is more than one, they won't work right.
 ;; )
 
-;;;
-;;; Solarized Theme (MELPA - solarized-theme package)
-;;;
+;;
+;; Solarized Theme (MELPA - solarized-theme package)
+;;
 (load-theme 'solarized-dark t)
 
-;;;
-;;; Color Identifiers Mode (MELPA - color-identifiers-mode package)
-;;;
-;;; Make it global for all supported file types
-;;; May slow down the editor, possibly disable when not really neeeded
+;;
+;; Color Identifiers Mode (MELPA - color-identifiers-mode package)
+;;
+;; Make it global for all supported file types
+;; May slow down the editor, possibly disable when not really neeeded
 ;;
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
 
-;;;
-;;; Magit (MELPA - magit package)
-;;;
+;;
+;; Magit (MELPA - magit package)
+;;
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;;;
-;;; CUA Mode
-;;;
+;;
+;; CUA Mode
+;;
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
