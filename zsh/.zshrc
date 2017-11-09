@@ -97,6 +97,7 @@ export CARGO=$HOME/.cargo
 export CUDA=/usr/local/cuda
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
+#export QEMU=/opt/qemu
 export PATH=$ALGS4/bin:$CARGO/bin:$CUDA/bin:$GOROOT/bin:$PATH
 
 # for tmux: export 256color
@@ -119,4 +120,16 @@ hd()
 }
 
 #export LM_LICENSE_FILE=/opt/Modelsim/license.dat
-
+#alias e='emacs'
+#alias te='emacs -nw'
+alias et='te'
+alias en='eframe'
+alias se='sudo emacs'
+alias ste='sudo emacs -nw'
+alias v='vim'
+alias sv='sudo vim'
+alias c='clear'
+alias h='history'
+alias hg='history | grep $1'
+alias psg='ps aux | grep $1'
+alias rm='rm -I'
