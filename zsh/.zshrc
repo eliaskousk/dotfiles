@@ -6,6 +6,7 @@ export ZSH=/home/lupo/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ys"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 #ZSH_TMUX_AUTOSTART=true
 
@@ -134,5 +135,3 @@ alias hg='history | grep $1'
 alias psg='ps aux | grep $1'
 alias rm='rm -I'
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
->>>>>>> Stashed changes
