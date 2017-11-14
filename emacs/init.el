@@ -54,6 +54,11 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time<Plug>(neosnippet_expand
 
 ;;
+;; Tramp Mode
+;;
+(setq tramp-default-method "ssh")
+
+;;
 ;; Set script directory
 ;;
 (defun prepend-path ( my-path )
