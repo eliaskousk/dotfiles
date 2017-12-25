@@ -56,7 +56,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found ubuntu git tmux emacs vi-mode vundle docker docker-compose cargo rust golang web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(command-not-found ubuntu git tmux fasd emacs vi-mode vundle docker docker-compose cargo rust golang web-search zsh-autosuggestions zsh-syntax-highlighting)
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
