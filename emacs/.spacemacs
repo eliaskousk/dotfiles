@@ -68,6 +68,10 @@ values."
      ranger
      spotify
      fasd
+     (wakatime :variables
+               wakatime-api-key  "53d4bf65-1ee3-44a0-b48b-9ff92d55a1f0"
+               ;; use the actual wakatime path
+               wakatime-cli-path "/usr/local/bin/wakatime")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
