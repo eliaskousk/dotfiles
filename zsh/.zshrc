@@ -95,11 +95,12 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 
 export ALGS4=/opt/algs4
 export CARGO=$HOME/.cargo
+export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
 #export QEMU=/opt/qemu
-export PATH=$ALGS4/bin:$CARGO/bin:$CUDA/bin:$GOROOT/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GOROOT/bin:$PATH
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
