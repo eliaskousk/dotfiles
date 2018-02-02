@@ -97,10 +97,13 @@ export ALGS4=/opt/algs4
 export CARGO=$HOME/.cargo
 export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
+export GHDL=/opt/ghdl
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
+#export MODELSIM_INSTALL=/opt/modelsim/modeltech
+export MODELSIM_INSTALL=/opt/modelsim/modelsim_ase
 #export QEMU=/opt/qemu
-export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GOROOT/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$GOROOT/bin:$MODELSIM_INSTALL/bin:$PATH
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
@@ -121,7 +124,9 @@ hd()
         # od -A n -t x -w4 -v "$@" | tr -d ' '
 }
 
-#export LM_LICENSE_FILE=/opt/Modelsim/license.dat
+export MODELSIM=$MODELSIM_INSTALL/modelsim.ini
+export LM_LICENSE_FILE=/opt/modelsim/license.dat
+
 #alias e='emacs'
 #alias te='emacs -nw'
 alias et='te'
@@ -136,3 +141,4 @@ alias hg='history | grep $1'
 alias psg='ps aux | grep $1'
 alias rm='rm -I'
 
+. /opt/miniconda3/etc/profile.d/conda.sh
