@@ -6,7 +6,6 @@ export ZSH=/home/lupo/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="ys"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 #ZSH_TMUX_AUTOSTART=true
 
@@ -64,6 +63,8 @@ plugins=(command-not-found ubuntu git tmux fasd emacs vi-mode vundle docker dock
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
