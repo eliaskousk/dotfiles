@@ -30,7 +30,7 @@ ZSH_THEME="ys"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -55,10 +55,12 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(command-not-found ubuntu git tmux fasd emacs vi-mode vundle docker docker-compose cargo rust golang web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(command-not-found git tmux fasd emacs vi-mode vundle docker docker-compose cargo rust golang web-search zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+# Removed: ubuntu (ag clashes with ag search tool)
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,10 +103,13 @@ export CUDA=/usr/local/cuda
 export GHDL=/opt/ghdl
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
+export HUB=/opt/hub
+export LNAV=/opt/lnav
 #export MODELSIM_INSTALL=/opt/modelsim/modeltech
 export MODELSIM_INSTALL=/opt/modelsim/modelsim_ase
+export TIG=/opt/tig
 #export QEMU=/opt/qemu
-export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$GOROOT/bin:$MODELSIM_INSTALL/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MODELSIM_INSTALL/bin:$TIG/bin:$PATH
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
@@ -125,9 +130,27 @@ hd()
         # od -A n -t x -w4 -v "$@" | tr -d ' '
 }
 
+# Add Previous Command as Pet Snippet
+function prev() {
+    PREV=$(fc -lrn | head -n 1)
+    sh -c "pet new `printf %q "$PREV"`"
+}
+
+# Select Pet Sniipets at Current Line (Like CTRL-R)
+function pet-select() {
+    BUFFER=$(pet search --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle redisplay
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select
+
+# Modelsim Variables
 export MODELSIM=$MODELSIM_INSTALL/modelsim.ini
 export LM_LICENSE_FILE=/opt/modelsim/license.dat
 
+# Aliases
 #alias e='emacs'
 #alias te='emacs -nw'
 alias et='te'
@@ -141,5 +164,10 @@ alias h='history'
 alias hg='history | grep $1'
 alias psg='ps aux | grep $1'
 alias rm='rm -I'
+alias git='hub'
 
+# Conda
 . /opt/miniconda3/etc/profile.d/conda.sh
+
+# Fzf (Fuzzy Finder)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
