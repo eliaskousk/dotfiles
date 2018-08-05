@@ -100,6 +100,7 @@ export ALGS4=/opt/algs4
 export CARGO=$HOME/.cargo
 export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
+export FANCYDIFF=$HOME/Development/Software/Github/so-fancy
 export GHDL=/opt/ghdl
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
@@ -107,9 +108,14 @@ export HUB=/opt/hub
 export LNAV=/opt/lnav
 #export MODELSIM_INSTALL=/opt/modelsim/modeltech
 export MODELSIM_INSTALL=/opt/modelsim/modelsim_ase
+#export MODELSIM_INSTALL=/opt/questasim/questasim
 export TIG=/opt/tig
 #export QEMU=/opt/qemu
-export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MODELSIM_INSTALL/bin:$TIG/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$FANCYDIFF/diff-so-fancy:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MODELSIM_INSTALL/bin:$TIG/bin:$PATH
+
+# CUDA
+export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # for tmux: export 256color
 #[ -n "$TMUX" ] && export TERM=xterm-256color
@@ -148,7 +154,8 @@ bindkey '^s' pet-select
 
 # Modelsim Variables
 export MODELSIM=$MODELSIM_INSTALL/modelsim.ini
-export LM_LICENSE_FILE=/opt/modelsim/license.dat
+export LM_LICENSE_FILE=$MODELSIM_INSTALL/license.dat
+#export MTI_VCO_MODE=64
 
 # Aliases
 #alias e='emacs'
