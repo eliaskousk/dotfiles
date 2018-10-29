@@ -25,3 +25,5 @@
 
 [diff-so-fancy]
 	stripLeadingSymbols = false
+[pull]
+	rebase = true
