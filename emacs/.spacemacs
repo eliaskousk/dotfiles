@@ -70,6 +70,7 @@ values."
      ranger
      spotify
      fasd
+     imenu-list
      (wakatime :variables
                wakatime-api-key  "53d4bf65-1ee3-44a0-b48b-9ff92d55a1f0"
                ;; use the actual wakatime path
