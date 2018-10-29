@@ -100,7 +100,7 @@ export ALGS4=/opt/algs4
 export CARGO=$HOME/.cargo
 export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
-export FANCYDIFF=$HOME/Development/Software/Github/so-fancy
+export FANCYDIFF=/opt/diff
 export GHDL=/opt/ghdl
 export GOROOT=/opt/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
@@ -111,7 +111,7 @@ export MODELSIM_INSTALL=/opt/modelsim/modelsim_ase
 #export MODELSIM_INSTALL=/opt/questasim/questasim
 export TIG=/opt/tig
 #export QEMU=/opt/qemu
-export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$FANCYDIFF/diff-so-fancy:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MODELSIM_INSTALL/bin:$TIG/bin:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$GHDL/bin:$FANCYDIFF:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MODELSIM_INSTALL/bin:$TIG/bin:$PATH
 
 # CUDA
 export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
@@ -172,6 +172,7 @@ alias hg='history | grep $1'
 alias psg='ps aux | grep $1'
 alias rm='rm -I'
 alias git='hub'
+alias lg='lazygit'
 
 # Conda
 . /opt/miniconda3/etc/profile.d/conda.sh
