@@ -195,6 +195,8 @@ alias pbpaste='xsel --clipboard --output'
 alias glop="glog"
 alias gpp="~/Development/Software/Stromasys/SolarisPerformanceAnalysis/gen-perf-plots"
 alias gv="gwenview"
+alias pst='pueue status'
+alias plg='pueue log'
 
 # Conda
 # . /opt/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
