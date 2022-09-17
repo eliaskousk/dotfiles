@@ -70,7 +70,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell 
-plugins=(cargo command-not-found docker docker-compose emacs fasd git golang rust tmux ubuntu vi-mode vundle web-search zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+plugins=(rust command-not-found docker docker-compose emacs fasd git golang rust tmux ubuntu vi-mode vundle web-search zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 # Re-enabled ubuntu (ag was clashing with ag search tool)
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -188,15 +188,16 @@ alias h='history'
 alias hg='history | grep $1'
 alias psg='ps aux | grep $1'
 alias rm='rm -I'
-alias git='hub'
+#alias git='hub'
 alias lg='lazygit'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias glop="glog"
-alias gpp="~/Development/Software/Stromasys/SolarisPerformanceAnalysis/gen-perf-plots"
+alias gpp="~/Development/Software/Stromasys/Performance.Analysis/solaris-perf-utils/gen-perf-plots"
 alias gv="gwenview"
 alias pst='pueue status'
 alias plg='pueue log'
+alias kc='kubectl'
 
 # Conda
 # . /opt/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
@@ -224,3 +225,24 @@ PERL5LIB="/home/lupo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/lupo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/lupo/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/lupo/perl5"; export PERL_MM_OPT;
+
+# Android SDK
+export ANDROID_HOME=/opt/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Node Version Manager (NVM)
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Hyperledger Fabric Tools
+#export PATH=$PATH:/home/lupo/Development/Software/Github/hyperledger/fabric/build/bin
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
