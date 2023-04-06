@@ -175,6 +175,8 @@ export LM_LICENSE_FILE=$MODELSIM_INSTALL/license.dat
 #export MTI_VCO_MODE=64
 
 # Aliases
+alias ls='exa'
+alias cat='bat'
 #alias e='emacs'
 #alias te='emacs -nw'
 alias et='te'
@@ -246,3 +248,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+eval $(thefuck --alias fu)
+
