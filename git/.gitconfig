@@ -15,16 +15,37 @@
         la = log --pretty=\"format:%ad %h (%an): %s\" --date=short
 [github]
 	user = eliaskousk
+
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true # side-by-side has it by default
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+#[core]
+#	pager = diff-so-fancy | less --tabs=4 -RFX
+
 [color]
 	ui = true
 [color "diff-highlight"]
 
 [color "diff"]
 
-[diff-so-fancy]
-	stripLeadingSymbols = false
+#[diff-so-fancy]
+#	stripLeadingSymbols = false
+
 [pull]
 	rebase = true
 [log]
@@ -33,3 +54,15 @@
 #  pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 
+[gc]
+	autoDetach = false
+[commit]
+	gpgSign = false
+[gui]
+	pruneduringfetch = true
+[smartgit "submodule"]
+	fetchalways = false
+	update = true
+	initializenew = true
+[push]
+	recurseSubmodules = check
