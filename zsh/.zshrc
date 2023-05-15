@@ -108,7 +108,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export ALGS4=/opt/algs4
-export CARGO=$HOME/.cargo
+export CARGO=/opt/rust/cargo
 export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
 export DENO=$HOME/.deno
@@ -222,6 +222,11 @@ unset __conda_setup
 # Fzf (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Rust
+export RUSTUP_HOME=/home/Storage/Apps/rust/rustup/
+export CARGO_HOME=/home/Storage/Apps/rust/cargo/
+
+# Perl
 PATH="/home/lupo/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/lupo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/lupo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
