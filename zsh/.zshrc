@@ -109,7 +109,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 export ALGS4=/opt/algs4
 export CARGO=/opt/rust/cargo
-export CONDA=/opt/miniconda3
+#export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
 export DENO=$HOME/.deno
 export FANCYDIFF=/opt/diff
@@ -128,7 +128,7 @@ export QEMURISCV=$HOME/Development/Software/Github/riscv/riscv-qemu/install
 export RISCV=/opt/riscv
 #export QEMU=/opt/qemu
 export YSESS=/opt/ysess
-export PATH=$ALGS4/bin:$CARGO/bin:$CONDA/bin:$CUDA/bin:$DENO/bin:$GHDL/bin:$FANCYDIFF:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MAVEN/bin:$MODELSIM_INSTALL/bin:$PTS/bin:$TIG/bin:$QEMURISCV/bin:$RISCV/bin:$YSESS:$PATH
+export PATH=$ALGS4/bin:$CARGO/bin:$CUDA/bin:$DENO/bin:$GHDL/bin:$FANCYDIFF:$GOROOT/bin:$GOPATH/bin:$HUB/bin:$LNAV/bin:$MAVEN/bin:$MODELSIM_INSTALL/bin:$PTS/bin:$TIG/bin:$QEMURISCV/bin:$RISCV/bin:$YSESS:$PATH
 
 # CUDA
 #export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
@@ -206,18 +206,24 @@ alias kc='kubectl'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/opt/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/opt/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
+
+# Pyenv
+export PYENV_ROOT="/opt/pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Fzf (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -256,5 +262,5 @@ export PATH=$PATH:$HOME/.pulumi/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-eval $(thefuck --alias fu)
+# eval $(thefuck --alias fu)
 
