@@ -108,13 +108,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export ALGS4=/opt/algs4
-export CARGO=/opt/rust/cargo
+export CARGO=$HOME/.cargo
 #export CONDA=/opt/miniconda3
 export CUDA=/usr/local/cuda
 export DENO=$HOME/.deno
 export FANCYDIFF=/opt/diff
 export GHDL=/opt/ghdl
-export GOROOT=/opt/go
+export GOROOT=/opt/apps/go
 export GOPATH=$HOME/Development/Software/GoWorkSpace
 export HUB=/opt/hub
 export LNAV=/opt/lnav
@@ -139,12 +139,12 @@ export PATH=$ALGS4/bin:$CARGO/bin:$CUDA/bin:$DENO/bin:$GHDL/bin:$FANCYDIFF:$GORO
 #export TERM=xterm-256color
 
 # Search backwards and forwards with a pattern
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
-bindkey -M vicmd '?' history-incremental-pattern-search-forward
+#bindkey -M vicmd '/' history-incremental-pattern-search-backward
+#bindkey -M vicmd '?' history-incremental-pattern-search-forward
 
 # set up for insert mode too
-bindkey -M viins '^R' history-incremental-pattern-search-backward
-bindkey -M viins '^F' history-incremental-pattern-search-forward
+#bindkey -M viins '^R' history-incremental-pattern-search-backward
+#bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 hd()
 {
@@ -175,7 +175,8 @@ export LM_LICENSE_FILE=$MODELSIM_INSTALL/license.dat
 #export MTI_VCO_MODE=64
 
 # Aliases
-alias ls='exa'
+alias ls='eza'
+#alias ls='exa'
 alias cat='bat'
 #alias e='emacs'
 #alias te='emacs -nw'
@@ -195,42 +196,54 @@ alias lg='lazygit'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias glop="glog"
-alias gpp="~/Development/Software/Stromasys/Performance.Analysis/solaris-perf-utils/gen-perf-plots"
+alias cpu="~/Software/Stromasys/Cloud.Automation/charon-cloud-automation-platform/charon-performance-analyzer/solaris-perf-utils/cperfutil"
 alias gv="gwenview"
 alias pst='pueue status'
 alias plg='pueue log'
 alias kc='kubectl'
+alias cpe='gh copilot explain'
+alias cps='gh copilot suggest'
 
 # Conda
 # . /opt/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#__conda_setup="$('/opt/apps/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__conda_setup"
 #else
-#    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-#        . "/opt/miniconda3/etc/profile.d/conda.sh"
+#    if [ -f "/opt/apps/miniforge3/etc/profile.d/conda.sh" ]; then
+#        . "/opt/apps/miniforge3/etc/profile.d/conda.sh"
 #    else
-#        export PATH="/opt/miniconda3/bin:$PATH"
+#        export PATH="/opt/apps/miniforge3/bin:$PATH"
 #    fi
 #fi
 #unset __conda_setup
+
+#if [ -f "/opt/apps/miniforge3/etc/profile.d/mamba.sh" ]; then
+#    . "/opt/apps/miniforge3/etc/profile.d/mamba.sh"
+#fi
 # <<< conda initialize <<<
 
-# Pyenv
-export PYENV_ROOT="/opt/pyenv"
+# Load pyenv automatically by appending
+# the following to
+# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# and ~/.bashrc (for interactive shells) :
+
+export PYENV_ROOT="/home/Storage/SSD/Apps/pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+PATH="/home/lupo/.local/bin:$PATH"
 
 # Fzf (Fuzzy Finder)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Rust
-export RUSTUP_HOME=/home/Storage/Apps/rust/rustup/
-export CARGO_HOME=/home/Storage/Apps/rust/cargo/
+export RUSTUP_HOME=~/.rustup/
+export CARGO_HOME=~/.cargo/
 
 # Perl
 PATH="/home/lupo/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -240,11 +253,11 @@ PERL_MB_OPT="--install_base \"/home/lupo/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/lupo/perl5"; export PERL_MM_OPT;
 
 # Android SDK
-export ANDROID_HOME=/opt/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export ANDROID_HOME=/opt/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Node Version Manager (NVM)
 #export NVM_DIR="$HOME/.nvm"
@@ -254,7 +267,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Hyperledger Fabric Tools
 #export PATH=$PATH:/home/lupo/Development/Software/Github/hyperledger/fabric/build/bin
 
-
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # add Pulumi to the PATH
@@ -262,5 +274,17 @@ export PATH=$PATH:$HOME/.pulumi/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# eval $(thefuck --alias fu)
+#eval $(thefuck --alias fu)
 
+# Modular's Mojo
+# export MODULAR_HOME="$HOME/.modular"
+# export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+
+
+# export QSYS_ROOTDIR="/home/Storage/SSD/Apps/intel/intelFPGA_lite/22.1std/quartus/sopc_builder/bin"
+
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+
+
+source /home/lupo/.config/broot/launcher/bash/br
