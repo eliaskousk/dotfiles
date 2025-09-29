@@ -231,10 +231,10 @@ alias cps='gh copilot suggest'
 # ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
 # and ~/.bashrc (for interactive shells) :
 
-export PYENV_ROOT="/home/Storage/SSD/Apps/pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#export PYENV_ROOT="/home/Storage/SSD/Apps/pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 PATH="/home/lupo/.local/bin:$PATH"
 
@@ -286,5 +286,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 
-
 source /home/lupo/.config/broot/launcher/bash/br
+
+. "$HOME/.cargo/env"
+
